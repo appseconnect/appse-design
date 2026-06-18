@@ -10,5 +10,5 @@
   "repository": "https://github.com/appseconnect/appse-design",
   "keywords": ["design", "ux", "design-system"],
   "requires": ["appse-core"],
-  "skills": []
+  "skills": "./skills/"
 }
