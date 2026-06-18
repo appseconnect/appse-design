@@ -28,6 +28,8 @@ Read `conventions/workspace.md` (appse-core) for repo URLs and workspace rules.
 | Specs clone target | `%USERPROFILE%\repos\arise-workspace\arise-specs` |
 | Specs repo URL | `https://insyncworld@dev.azure.com/insyncworld/APPSeCONNECT-Reimagine/_git/arise-specs` |
 | Setup report | `%USERPROFILE%\repos\arise-workspace\setup\ds-env-{YYYY-MM-DD}.md` |
+| Marketplace path | `%USERPROFILE%\.cursor\plugins\local\appse-marketplace` |
+| Role plugin name | `appse-design` |
 
 **Workspace roots for Design:** `arise-specs` only.
 
@@ -35,9 +37,13 @@ Read `conventions/workspace.md` (appse-core) for repo URLs and workspace rules.
 
 ## Workflow
 
-### Step 0 — Ensure appse-core Installed
+### Step 0 — Ensure Cursor Plugins Installed (marketplace-first)
 
-- Detect `AGENTS.md`, `mcp.json`, `conventions/`. Install appse-core if missing.
+If **`/setup-ds`** was already run, skip to Step 1.
+
+Otherwise follow **Phase 1–3** in `appse-marketplace/skills/references/marketplace-plugin-install.md` for role plugin **`appse-design`**.
+
+**Fresh plugin clone** → **Developer: Reload Window**, then re-run **`/ds-init`**. Install fails → hard stop.
 
 ### Step 1 — Load Config
 
@@ -107,6 +113,7 @@ Save `setup/ds-env-{YYYY-MM-DD}.md`:
 
 ## Definition of Done
 
+- [ ] `appse-marketplace`, `appse-core`, and `appse-design` under `%USERPROFILE%\.cursor\plugins\local\`.
 - [ ] `ds-workspace.code-workspace` created and opened.
 - [ ] `arise-specs` is a workspace root.
 - [ ] Design folders scaffolded.
