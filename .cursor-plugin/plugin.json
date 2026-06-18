@@ -1,0 +1,14 @@
+{
+  "name": "appse-design",
+  "displayName": "appse ai Design",
+  "version": "1.0.0",
+  "description": "Product Design — reserved. ds-* skills will be added in a future release.",
+  "author": {
+    "name": "appse ai",
+    "email": "eng@appse.ai"
+  },
+  "repository": "https://github.com/appseconnect/appse-design",
+  "keywords": ["design", "ux", "design-system"],
+  "requires": ["appse-core"],
+  "skills": []
+}
