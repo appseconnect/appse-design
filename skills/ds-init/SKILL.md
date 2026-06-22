@@ -37,13 +37,15 @@ Read `conventions/workspace.md` (appse-core) for repo URLs and workspace rules.
 
 ## Workflow
 
-### Step 0 — Ensure Cursor Plugins Installed (marketplace-first)
+### Step 0 — Ensure Plugins Installed (AI tool + marketplace-first)
 
 If **`/setup-ds`** was already run, skip to Step 1.
 
-Otherwise follow **Phase 1–3** in `appse-marketplace/skills/references/marketplace-plugin-install.md` for role plugin **`appse-design`**.
+Otherwise read `appse-marketplace/skills/references/ai-tool-plugin-install.md` for role plugin **`appse-design`**:
 
-**Fresh plugin clone** → **Developer: Reload Window**, then re-run **`/ds-init`**. Install fails → hard stop.
+1. **Phase 0** — Ask AI tool: **Cursor** / **Claude Code** / **Claude with VS Code**.
+2. Install **`appse-core`** + **`appse-design`** per chosen tool.
+3. **Cursor fresh clone** → **Developer: Reload Window**, then re-run **`/ds-init`**. Install fails → hard stop.
 
 ### Step 1 — Load Config
 
@@ -66,11 +68,13 @@ Otherwise follow **Phase 1–3** in `appse-marketplace/skills/references/marketp
    }
    ```
 
-4. **Open workspace:**
+4. **Open workspace** — branch by AI tool:
 
-   ```powershell
-   cursor "$env:USERPROFILE\repos\arise-workspace\ds-workspace.code-workspace"
-   ```
+   **Cursor:** `cursor "$env:USERPROFILE\repos\arise-workspace\ds-workspace.code-workspace"`
+
+   **Claude with VS Code:** **File → Open Workspace from File…** or `code "...ds-workspace.code-workspace"`
+
+   **Claude Code:** open workspace file via `code` or manually.
 
 5. **Verify** `arise-specs/handbook/guidelines/` is readable.
 
@@ -113,7 +117,7 @@ Save `setup/ds-env-{YYYY-MM-DD}.md`:
 
 ## Definition of Done
 
-- [ ] `appse-marketplace`, `appse-core`, and `appse-design` under `%USERPROFILE%\.cursor\plugins\local\`.
+- [ ] `appse-core` and `appse-design` installed per chosen AI tool.
 - [ ] `ds-workspace.code-workspace` created and opened.
 - [ ] `arise-specs` is a workspace root.
 - [ ] Design folders scaffolded.
