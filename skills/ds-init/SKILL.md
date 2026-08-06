@@ -43,9 +43,21 @@ If **`/setup-ds`** was already run, skip to Step 1.
 
 Otherwise read `appse-marketplace/skills/references/ai-tool-plugin-install.md` for role plugin **`appse-design`**:
 
-1. **Phase 0** — Ask AI tool: **Cursor** / **Claude Code** / **Claude with VS Code**.
+1. Ask which tool they are using, unless you already know:
+
+   > "Which app are you working in? The install steps are different for each one.
+   >
+   > - **Cursor**
+   > - **Claude Code** (the command line)
+   > - **Claude with VS Code**"
+
 2. Install **`appse-core`** + **`appse-design`** per chosen tool.
-3. **Cursor fresh clone** → **Developer: Reload Window**, then re-run **`/ds-init`**. Install fails → hard stop.
+3. On Cursor, a first-time install needs a restart:
+
+   > "The design tools are downloaded, but Cursor has to restart before it can see
+   > them. Run **Developer: Reload Window**, then `/ds-init` again."
+
+   If the install itself fails, stop — say what failed and do not carry on half-set-up.
 
 ### Step 1 — Load Config
 
@@ -104,29 +116,37 @@ handbook/design/
 
 Save `setup/ds-env-{YYYY-MM-DD}.md`:
 
-> Design environment ready:
-> ✅ `ds-workspace.code-workspace` created and opened
-> ✅ arise-specs ({branch})
-> ✅ Figma {connected / ⚠️}
-> ✅ Brand standards {present / ⚠️}
-> ✅ Design folders scaffolded
+> "You are set up. Here is what I did:
 >
-> ds- working skills are reserved. Pair with PM on `pm-user-research` for now.
+> - Downloaded the handbook, `arise-specs`, where the plans and design notes live.
+> - Made you a workspace file and opened it. Open `ds-workspace.code-workspace` from
+>   now on.
+> - Connected to Figma: {connected / not connected, and why}.
+> - Found the brand guidelines: {yes, at {path} / not yet — worth adding}.
+> - Created the design folders. Nothing of yours was overwritten.
+>
+> I saved a note of all this at `{report-path}`.
+>
+> **Where to start.** The design skills of your own are still being built. For now,
+> the most useful thing you can do is pair with a product manager on understanding
+> users → `/pm-user-research`. Designers usually spot things in that work that
+> nobody else does."
 
 ---
 
-## Definition of Done
+## What "done" looks like
 
-- [ ] `appse-core` and `appse-design` installed per chosen AI tool.
-- [ ] `ds-workspace.code-workspace` created and opened.
-- [ ] `arise-specs` is a workspace root.
-- [ ] Design folders scaffolded.
-- [ ] Setup report saved.
+- [ ] The design tools are installed and your app can see them.
+- [ ] `ds-workspace.code-workspace` exists and is open.
+- [ ] The handbook is downloaded and readable.
+- [ ] The design folders exist, with nothing of yours overwritten.
+- [ ] A note of the setup is saved.
 
 ---
 
 ## Output Rules
 
-- Idempotent; confirm before clone
+- Everything the user reads is plain English — `conventions/plain-english.md` (appse-core)
+- Safe to run again — only create what is missing, and always ask before downloading
 - Never merge Design folders into another role's workspace file
 - Brand standards live in `handbook/guidelines/`
